@@ -21,20 +21,20 @@ jobs:
 
       - name: Install Dependencies
         working-directory: ./ppinfra
-  # Corrected path
         run: npm install
 
       - name: Login to Pulumi
-        run: pulumi login  # Ensures Pulumi is authenticated
+        run: pulumi login --cloud-url https://app.pulumi.com
 
       - name: Deploy Pulumi Stack
         uses: pulumi/actions@v5
         with:
           command: up
-          stack-name: myworkshop/dev  # Correct stack name
-          work-dir: ./ppinfra  # Corrected path
+          stack-name: mishu22bd/myworkshop/dev
+          work-dir: ./ppinfra
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+
           # Uncomment if not using Pulumi ESC
           # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
