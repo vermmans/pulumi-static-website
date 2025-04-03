@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Login to Pulumi
-        run: pulumi login --cloud-url https://app.pulumi.com
+        run: pulumi login --non-interactive
 
       - name: Deploy Pulumi Stack
         uses: pulumi/actions@v5
