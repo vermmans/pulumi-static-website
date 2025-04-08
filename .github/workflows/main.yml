@@ -27,7 +27,7 @@ jobs:
         uses: pulumi/actions@v5
         with:
           command: up
-          stack-name: Bunny3006/myworkshop/dev
+          stack-name: vermmans/myworkshop/dev
           work-dir: ./ppinfra
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
